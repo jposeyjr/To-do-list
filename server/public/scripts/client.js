@@ -52,11 +52,12 @@ function renderTodo(todos) {
     $('#view-todo').append(`
       </br>
       <section class='todo-task' data-id='${todo.id}'>
-    <p>Todo: ${todo.task} </p>
-    <p>Status: ${todo.status}
-    </p>
-    </section>
-    <button id='btn-delete'>Delete</button>
+      <div class='todo-list'>
+        <p>Todo: ${todo.task}</p>
+        <p>Status: ${todo.status}</p>
+        <button class='btn-delete'>Delete</button>
+        </section>
+        </div>
     </br>`);
     console.log(todo);
   }

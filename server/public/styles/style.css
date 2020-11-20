@@ -11,18 +11,11 @@ body {
   background-color: #f1faee;
 }
 
-.todo-task {
-  display: inline-flex;
+.todo-list {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 0.5fr;
+  grid-template-rows: 4em;
+  gap: 0px 0px;
   background-color: #a8dadc;
-  width: 20em;
-  height: 2.5em;
-}
-
-p {
   margin-left: 1em;
-}
-
-button {
-  padding: 1em;
-  border-radius: 0.6em;
 }
