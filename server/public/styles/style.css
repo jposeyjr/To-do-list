@@ -6,3 +6,23 @@ A8DADC - powderblue
 1D3557 - darkest blue 
 Hex for a solid color pallet 
 */
+
+body {
+  background-color: #f1faee;
+}
+
+.todo-task {
+  display: inline-flex;
+  background-color: #a8dadc;
+  width: 20em;
+  height: 2.5em;
+}
+
+p {
+  margin-left: 1em;
+}
+
+button {
+  padding: 1em;
+  border-radius: 0.6em;
+}
