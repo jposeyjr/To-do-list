@@ -13,9 +13,21 @@ body {
 
 .todo-list {
   display: grid;
-  grid-template-columns: 2.5fr 1fr 0.5fr;
-  grid-template-rows: 4em;
-  gap: 0px 0px;
+  grid-template-columns: 2.5fr 1fr 1fr;
+  gap: 0px 1em;
   background-color: #a8dadc;
-  margin-left: 1em;
+  border-radius: 1em;
+  margin: 0.7em 1em 0.5em 1em;
+}
+#view-todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 35em;
+  min-height: 30em;
+  background: #457b9d;
+  text-align: center;
+  margin: 1em 1em 12em 1em;
+  border-radius: 2em;
+  padding-bottom: 1em;
 }

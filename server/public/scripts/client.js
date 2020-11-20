@@ -50,15 +50,14 @@ function renderTodo(todos) {
   for (let i = 0; i < todos.length; i += 1) {
     let todo = todos[i];
     $('#view-todo').append(`
-      </br>
       <section class='todo-task' data-id='${todo.id}'>
       <div class='todo-list'>
         <p>Todo: ${todo.task}</p>
         <p>Status: ${todo.status}</p>
-        <button class='btn-delete'>Delete</button>
-        </section>
+        <p><button class='btn-delete'>Delete</button></p>
         </div>
-    </br>`);
+        </section>
+    `);
     console.log(todo);
   }
 }
