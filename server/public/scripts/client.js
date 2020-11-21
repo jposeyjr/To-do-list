@@ -52,7 +52,7 @@ function renderTodo(todos) {
     $('#view-todo').append(`
       <section class='todo-task' data-id='${todo.id}' data-status='${todo.status}'>
       <div class='todo-list' id='${todo.id}'>
-        <p>Todo: ${todo.task}</p>
+        <p>${todo.task}</p>
         <p>Status: ${todo.status}</p>
         <p><button class='btn-delete'><img src='${deleteImg}'></button></p>
         </div>

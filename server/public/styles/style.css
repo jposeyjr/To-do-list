@@ -9,7 +9,7 @@ body {
 }
 
 .complete {
-  background-color: red !important;
+  background: red !important;
   text-decoration: line-through;
   opacity: 0.6;
 }
@@ -18,9 +18,13 @@ body {
   display: grid;
   grid-template-columns: 2.2fr 1.2fr 0.6fr;
   gap: 0em 0em;
-  background-color: #a8dadc;
+  background: #a8dadc;
   border-radius: 1em;
   margin: 0.7em 1em 0.5em 1em;
+}
+.todo-task:nth-child(odd) .todo-list {
+  /* background-color: #c234cf; */
+  background: #1d3557;
 }
 #view-todo {
   color: #f1faee;
