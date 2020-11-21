@@ -44,6 +44,12 @@ p:nth-child(1) {
 }
 
 .btn-delete {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn-delete > img {
   justify-content: center;
   background: transparent;
   border: none;
@@ -109,15 +115,6 @@ input:focus::-webkit-input-placeholder {
   color: #f1faee;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  html,
-  body {
-    height: 100%;
-    width: 100%;
-  }
-
-  html {
-    overflow: auto;
-  }
   p {
     font-size: 0.8em;
   }
@@ -131,5 +128,9 @@ input:focus::-webkit-input-placeholder {
 
   #view-todo {
     width: 18em;
+  }
+  img {
+    max-width: 24px;
+    max-height: 24px;
   }
 }
