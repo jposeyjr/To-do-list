@@ -14,6 +14,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="./scripts/client.js"></script>
     <title>To-do List</title>
   </head>
@@ -24,8 +25,14 @@
     <main>
       <section id="input-area">
         <form>
-          <input type="text" id="todo-input" />
-          <button type="submit" id="submit-btn">Submit</button>
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Enter a task todo here"
+          />
+          <button type="submit" id="submit-btn">
+            <img src="/images/plus.png" />
+          </button>
         </form>
       </section>
       <section id="view-todo"></section>

@@ -25,22 +25,34 @@ function getTodo() {
 
 function saveTodo(event) {
   event.preventDefault();
-  let newTodo = {
-    task: $('#todo-input').val(),
-    status: 'false',
-  };
-  $.ajax({
-    method: 'POST',
-    url: '/todo',
-    data: newTodo,
-  })
-    .then((res) => {
-      getTodo();
-    })
-    .catch((error) => {
-      console.error('Error in POST', error);
-      alert('Unable to add Todo at this time. Please try again later.');
+  let input = $('#todo-input').val();
+  if (input.length === 0) {
+    Swal.fire({
+      title: 'Invalid input',
+      icon: 'error',
+      width: 400,
+      position: 'top',
+      background: '#1d3557',
+      text: 'Please enter a valid todo task!',
     });
+  } else {
+    let newTodo = {
+      task: input,
+      status: 'false',
+    };
+    $.ajax({
+      method: 'POST',
+      url: '/todo',
+      data: newTodo,
+    })
+      .then((res) => {
+        getTodo();
+      })
+      .catch((error) => {
+        console.error('Error in POST', error);
+        alert('Unable to add Todo at this time. Please try again later.');
+      });
+  }
   $('#todo-input').val('');
 }
 
