@@ -7,8 +7,8 @@ $(document).ready(function () {
 
 function setupClickListeners() {
   $('#view-todo').on('click', '.btn-delete', deleteTodo);
-  $('#view-todo').on('click', '.btn-check', checkTodo);
-  $('#addButton').on('click', saveTodo);
+  //$('#view-todo').on('click', '.btn-check', checkTodo);
+  $('#submit-btn').on('click', saveTodo);
 }
 
 function getTodo() {
@@ -17,7 +17,6 @@ function getTodo() {
     url: '/todo',
   })
     .then((res) => {
-      console.log(res);
       renderTodo(res);
     })
     .catch((error) => {
@@ -25,9 +24,11 @@ function getTodo() {
     });
 }
 
-function saveTodo() {
+function saveTodo(event) {
+  event.preventDefault();
   let newTodo = {
     task: $('#todo-input').val(),
+    status: 'false',
   };
   $.ajax({
     method: 'POST',
@@ -43,6 +44,7 @@ function saveTodo() {
         'Unable to add Todo at this time. Please try again later.'
       );
     });
+  $('#todo-input').val('');
 }
 
 function renderTodo(todos) {
@@ -58,12 +60,11 @@ function renderTodo(todos) {
         </div>
         </section>
     `);
-    console.log(todo);
   }
 }
 
 function deleteTodo() {
-  let todoId = $(this).closest('div').data('id');
+  let todoId = $(this).closest('section').data('id');
   $.ajax({
     method: 'DELETE',
     url: `/todo/${todoId}`,

@@ -19,9 +19,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  let sqlText = ``;
+  let task = req.body;
+  console.log('Got the following task', task);
+  let sqlText = `INSERT INTO todo (task, status)
+  VALUES ($1, $2);`;
   pool
-    .query(sqlText)
+    .query(sqlText, [task.task, task.status])
     .then((result) => {
       res.sendStatus(201);
     })
@@ -47,9 +50,10 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
-  let id = req.params.id;
-  let sqlText = ``;
+router.delete('/:todoId', (req, res) => {
+  let id = req.params.todoId;
+  console.log('Removing task with id', id);
+  let sqlText = `DELETE FROM todo WHERE id=$1;`;
   pool
     .query(sqlText, [id])
     .then((result) => {
