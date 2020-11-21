@@ -1,14 +1,11 @@
 /* 
-E63946 - red 
-F1FAEE - honeydew
-A8DADC - powderblue 
-457B9D - slightly darker blue
 1D3557 - darkest blue 
 Hex for a solid color pallet 
 */
 
 body {
-  background-color: #f1faee;
+  font-family: 'Texturina', serif;
+  background-color: #1d3557;
 }
 
 .complete {
@@ -19,21 +16,43 @@ body {
 
 .todo-list {
   display: grid;
-  grid-template-columns: 2.5fr 1fr 1fr;
-  gap: 0px 1em;
+  grid-template-columns: 2.2fr 1.2fr 0.6fr;
+  gap: 0em 0em;
   background-color: #a8dadc;
   border-radius: 1em;
   margin: 0.7em 1em 0.5em 1em;
 }
 #view-todo {
+  color: #f1faee;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 35em;
+  width: 23em;
   min-height: 30em;
   background: #457b9d;
   text-align: center;
-  margin: 1em 1em 12em 1em;
+  font-size: 1.2em;
+  margin: 2em auto;
   border-radius: 2em;
   padding-bottom: 1em;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 1.3em;
+  width: 1.3em;
+}
+
+#input-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1 {
+  color: #f1faee;
+  font-size: 3em;
+  text-align: center;
 }

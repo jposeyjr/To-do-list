@@ -45,6 +45,7 @@ function saveTodo(event) {
 }
 
 function renderTodo(todos) {
+  let deleteImg = `/images/delete.png`;
   $('#view-todo').empty();
   for (let i = 0; i < todos.length; i += 1) {
     let todo = todos[i];
@@ -53,7 +54,7 @@ function renderTodo(todos) {
       <div class='todo-list' id='${todo.id}'>
         <p>Todo: ${todo.task}</p>
         <p>Status: ${todo.status}</p>
-        <p><button class='btn-delete'>Delete</button></p>
+        <p><button class='btn-delete'><img src='${deleteImg}'></button></p>
         </div>
         </section>
     `);
