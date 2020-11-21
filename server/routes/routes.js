@@ -32,7 +32,8 @@ router.post('/', (req, res) => {
 
 router.put('/:todoId', (req, res) => {
   let id = req.params.todoId;
-  let status = req.body.taskStatus;
+  let status = req.body.status;
+  console.log(id, status);
   let sqlText = ``;
   if (status === 'true') {
     sqlText = `UPDATE todo SET status='false' WHERE id=$1;`;
