@@ -11,6 +11,12 @@ body {
   background-color: #f1faee;
 }
 
+.complete {
+  background-color: red !important;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
 .todo-list {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr;

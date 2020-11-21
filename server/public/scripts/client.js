@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  console.log('JQ');
   // Establish Click Listeners
   setupClickListeners();
   getTodo();
@@ -7,7 +6,7 @@ $(document).ready(function () {
 
 function setupClickListeners() {
   $('#view-todo').on('click', '.btn-delete', deleteTodo);
-  //$('#view-todo').on('click', '.btn-check', checkTodo);
+  $('#view-todo').on('click', '.todo-list', checkTodo);
   $('#submit-btn').on('click', saveTodo);
 }
 
@@ -40,9 +39,7 @@ function saveTodo(event) {
     })
     .catch((error) => {
       console.error('Error in POST', error);
-      alert(
-        'Unable to add Todo at this time. Please try again later.'
-      );
+      alert('Unable to add Todo at this time. Please try again later.');
     });
   $('#todo-input').val('');
 }
@@ -52,14 +49,18 @@ function renderTodo(todos) {
   for (let i = 0; i < todos.length; i += 1) {
     let todo = todos[i];
     $('#view-todo').append(`
-      <section class='todo-task' data-id='${todo.id}'>
-      <div class='todo-list'>
+      <section class='todo-task' data-id='${todo.id}' data-status='${todo.status}'>
+      <div class='todo-list' id='${todo.id}'>
         <p>Todo: ${todo.task}</p>
         <p>Status: ${todo.status}</p>
         <p><button class='btn-delete'>Delete</button></p>
         </div>
         </section>
     `);
+    if (todo.status === 'true') {
+      $(`#${todo.id}`).toggleClass('complete');
+      console.log('working', todo.status);
+    }
   }
 }
 
@@ -79,11 +80,12 @@ function deleteTodo() {
 }
 
 function checkTodo() {
-  let id = $(this).closest('div').data('id');
-  let todoCheck;
+  let id = $(this).closest('section').data('id');
+  let taskStatus = $(this).closest('section').data('status');
   $.ajax({
     method: 'PUT',
-    url: `todo/${id}`,
+    url: `/todo/${id}`,
+    data: { taskStatus },
   })
     .then((res) => {
       getTodo();
