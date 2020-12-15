@@ -6,17 +6,24 @@
 
 ## Description
 
-Sherlock is a program in development that will be used to help those with vision impairments to be able to view and access the web quickly and easily. Sherlock is not limited to websites that are only designed with accessibility in mind but any website. It will fetch all html/css files using those to render only relevant information or add accessibility features such as describing an image without alt tags, informing the user of buttons not “typed” as buttons, etc. 
+Basic todo list that has the ability to show completed items by clicking on them. If you make a mistake you can click again then finally once completed and done you are able to delete it from your list if you choose. Everything is stored in a SQL database so you will always have access to it.
 
 ### TO DO 
 Add front-end 
 Render Functions Per User Requests 
 
-### Duration: 12 hours
+### Duration: 3 hours
 
 ## Set Up
 
 - Fork
 - Clone
+- Create a database
+- Create a table using the database.sql file.
+- Create a config.env file in the modules folder
+- Add the following line to the config file
+  DATABASE_URL = 'postgres://username:password@localhost:5432/databasename'
 - npm i
+- npm start
+- Open browser to http://localhost:5000
 Then use the different fetch methods at this time. 
